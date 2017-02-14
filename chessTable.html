@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<table border="1" id="table">
+		<tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td></tr>
+		<tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td></tr>
+		<tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td></tr>
+		<tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td></tr>
+		<tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td></tr>
+		<tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td></tr>
+		<tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td></tr>
+		<tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td></tr>
+
+	</table>
+	<button id="tr">tr</button>
+	<button id="td">td</button>
+	<button id="chess">chess</button>
+
+</body>
+<script>
+$( document ).ready(function() {
+ 
+    $( "#tr" ).click(function( event ) {
+        var trs = $("tr");
+
+		for(var i=0;i<trs.length;i++){
+			if (i%2){
+		  		trs[i].style.background = "black"  
+	  		} 
+		}
+    });
+
+    $( "#td" ).click(function( event ) {
+        var tds = $("td");
+
+		for(var i=0;i<tds.length;i++){
+			if (i%2){
+		  		tds[i].style.background = "black"  
+	  		} 
+		}
+    });
+
+    $( "#chess" ).click(function( event ) {
+		var trs = $("tr");
+
+		for(var i=0;i<$("tr").length;i++){
+		    var tds	= trs[i].getElementsByTagName('td');
+			for (var j = 0; j < tds.length; j++) {
+				if ((i+j)%2){
+					tds[j].style.background = "black"; 
+				}
+			}
+		}
+	});
+});
+</script>
+</html>
